@@ -17,6 +17,9 @@ app.get('/', (request, response) => response.send("We Don't Go To Ravenholm"));
 //Chart route
 app.use('/chart', require('./Routes/charts'));
 
+//Record route
+app.use('/records', require('./Routes/records'));
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
