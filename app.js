@@ -15,7 +15,7 @@ const app = express();
 app.get('/', (request, response) => response.send("We Don't Go To Ravenholm"));
 
 //Chart route
-app.use('/chart', require('./Routes/chart'));
+app.use('/chart', require('./Routes/charts'));
 
 const PORT = process.env.PORT || 3000;
 
