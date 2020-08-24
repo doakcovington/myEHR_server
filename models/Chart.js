@@ -3,13 +3,13 @@ const database = require('../config/database');
 
 const Chart = database.define('chart', {
     pcp: {
-        type: Sequelize.STRING 
+        type: Sequelize.TEXT
     },
     name: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
     },
     dob: {
-        type: Sequelize.DATE 
+        type: Sequelize.DATE
     }
 })
 
