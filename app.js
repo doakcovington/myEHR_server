@@ -3,14 +3,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const database = require('./config/database')
+const database = require('./config/database');
+const cors = require('cors');
 
 database.authenticate()
     .then(() => console.log("Connected to myehr database"))
     .catch(error => console.log(error.message))
 
-
+//middleware
 const app = express();
+app.use(cors());
 
 app.get('/', (request, response) => response.send("We Don't Go To Ravenholm"));
 

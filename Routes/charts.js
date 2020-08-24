@@ -7,6 +7,7 @@ router.get('/', (request, response) =>
     Charts.findAll()
     .then( chart => {
         console.log(chart);
+        response.json(chart)
         response.sendStatus(200);
     })
     .catch(error => console.log(error.message)));

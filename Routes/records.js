@@ -7,6 +7,7 @@ router.get('/', (request, response) =>
     Records.findAll()
     .then(record => {
         console.log(record);
+        response.json(record)
         response.sendStatus(200);
     })
     .catch(error => console.log(error.message))
