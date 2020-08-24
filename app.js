@@ -3,14 +3,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const { Sequelize } = require('sequelize');
+const database = require('./config/database')
 
-const sequelize = new Sequelize('myehr', 'postgres', 'admin', {
-    host: 'localhost',
-    dialect: 'postgres'
-});
-
-sequelize.authenticate()
+database.authenticate()
     .then(() => console.log("Connected to myehr database"))
     .catch(error => console.log(error.message))
 
