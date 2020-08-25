@@ -13,6 +13,7 @@ database.authenticate()
 //middleware
 const app = express();
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/', (request, response) => response.send("We Don't Go To Ravenholm"));
 
