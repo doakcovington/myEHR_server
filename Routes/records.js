@@ -8,7 +8,6 @@ const { create } = require('../models/Record');
 router.get('/', (request, response) => 
     Records.findAll()
     .then(record => {
-        console.log(record);
         response.json(record)
         response.sendStatus(200);
     })
@@ -27,12 +26,11 @@ router.post('/', (request, response) => {
         systolic,
         diastolic
     })
-    //.then(response.json())
     .then(record => {
-        console.log(record);
-        response.status.send({ status: 'OK'}); //this was causing the 'JS post fetch SyntaxError: Unexpected token O in JSON at position 0' error
+        response.json(record)
+        response.sendStatus(200);
     })
-    .catch(error => console.error(error));
+    .catch(error => console.log(error.message))
 })
 
 module.exports = router;
