@@ -27,9 +27,10 @@ router.post('/', (request, response) => {
         systolic,
         diastolic
     })
+    //.then(response.json())
     .then(record => {
         console.log(record);
-        response.sendStatus(200);
+        response.status.send({ status: 'OK'}); //this was causing the 'JS post fetch SyntaxError: Unexpected token O in JSON at position 0' error
     })
     .catch(error => console.error(error));
 })
